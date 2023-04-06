@@ -7,8 +7,12 @@ public class CRPGRuination : ModuleRules
 	public CRPGRuination(ReadOnlyTargetRules Target) : base(Target)
 	{
 		PCHUsage = PCHUsageMode.UseExplicitOrSharedPCHs;
-	
-		PublicDependencyModuleNames.AddRange(new string[] { "Core", "CoreUObject", "Engine", "InputCore" });
+
+		PublicDependencyModuleNames.AddRange(new string[]
+		{
+			"Core", "CoreUObject", "Engine", "InputCore", "GameplayAbilities", "GameplayTags", "GameFeatures",
+			"ModularGameplay", "ModularClassFramework"
+		});
 
 		PrivateDependencyModuleNames.AddRange(new string[] {  });
 
