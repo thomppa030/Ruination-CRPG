@@ -1,0 +1,9 @@
+[submodule "Plugins/GASGameplayFeatureActions"]
+	path = Plugins/GASGameplayFeatureActions
+	url = https://github.com/thomppa030/GASGameplayFeatureActions.git
+[submodule "Plugins/EditorAssetActions"]
+	path = Plugins/EditorAssetActions
+	url = https://github.com/thomppa030/UE5EditorAssetActions.git
+[submodule "Plugins/GASFramework"]
+	path = Plugins/GASFramework
+	url = https://github.com/thomppa030/GASFramework.git
