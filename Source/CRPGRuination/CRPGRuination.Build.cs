@@ -20,7 +20,6 @@ public class CRPGRuination : ModuleRules
 			"ModularClassFramework",
 			"EnhancedInput",
 			"GASFramework",
-			"SimpleJumpGASRuntime",
 			"ModularGameplay", 
 			"GameFeatures"
 		});
