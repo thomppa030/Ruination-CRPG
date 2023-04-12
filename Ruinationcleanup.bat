@@ -19,12 +19,12 @@ rmdir /s /q Plugins\GASGameplayFeatureActions\Intermediate
 rmdir /s /q Plugins\GASFramework\Binaries
 rmdir /s /q Plugins\GASFramework\Intermediate
 
-rmdir /s /q Plugins\GameFeatures\SimpleJumpGAS\Binaries
-rmdir /s /q Plugins\GameFeatures\SimpleJumpGAS\Intermediate
+rmdir /s /q Plugins\GameFeatures\MandoMove\Binaries
+rmdir /s /q Plugins\GameFeatures\MandoMove\Intermediate
 
 set MyUVS="C:\Program Files (x86)\Epic Games\Launcher\Engine\Binaries\Win64\UnrealVersionSelector.exe"
 
-set MyUBT="R:\Unreal Engine\UE_5.1\Engine\Binaries\DotNET\UnrealBuildTool\UnrealBuildTool.exe"
+set MyUBT="R:\Unreal Engine\UE_5.2\Engine\Binaries\DotNET\UnrealBuildTool\UnrealBuildTool.exe"
 
 rem change Transformation to your own project name
 set MyFullPath="%cd%\CRPGRuination"
