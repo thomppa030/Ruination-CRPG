@@ -7,3 +7,6 @@
 [submodule "Plugins/GASGameFeatureActions"]
 	path = Plugins/GASGameFeatureActions
 	url = https://github.com/thomppa030/GASGameplayFeatureActions.git
+[submodule "Plugins/GameFeatures/JetpackCharacterMovement"]
+	path = Plugins/GameFeatures/JetpackCharacterMovement
+	url = https://github.com/thomppa030/JetpackCharacterMovement.git
