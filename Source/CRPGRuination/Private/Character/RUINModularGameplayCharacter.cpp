@@ -5,6 +5,7 @@
 #include "AbilitySystemComponent.h"
 #include "InputActionValue.h"
 #include "EnhancedInputComponent.h"
+#include "GroomComponent.h"
 #include "Camera/CameraComponent.h"
 #include "GameFramework/CharacterMovementComponent.h"
 #include "GameFramework/SpringArmComponent.h"
@@ -37,6 +38,14 @@ ARUINModularGameplayCharacter::ARUINModularGameplayCharacter(const FObjectInitia
 	AbilitySystemComponent = CreateDefaultSubobject<UAbilitySystemComponent>(TEXT("AbilitySystemComponent"));
 	AbilitySystemComponent->SetIsReplicated(true);
 	AbilitySystemComponent->SetReplicationMode(EGameplayEffectReplicationMode::Mixed);
+
+	Hair = CreateDefaultSubobject<UGroomComponent>(TEXT("Hair"));
+	Hair->SetupAttachment(GetMesh());
+	Hair->AttachmentName = FString("head");
+
+	Eyebrows = CreateDefaultSubobject<UGroomComponent>(TEXT("Eyebrows"));
+	Eyebrows->SetupAttachment(GetMesh());
+	Eyebrows->AttachmentName = FString("head");
 }
 
 UAbilitySystemComponent* ARUINModularGameplayCharacter::GetAbilitySystemComponent() const
@@ -49,21 +58,4 @@ void ARUINModularGameplayCharacter::Landed(const FHitResult& Hit)
 	Super::Landed(Hit);
 
 	AbilitySystemComponent->RemoveActiveEffectsWithSourceTags(FGameplayTagContainer(FGameplayTag::RequestGameplayTag(FName("State.Movement.InAir"))));
-}
-
-bool ARUINModularGameplayCharacter::ApplyGamePlayEffectToSelf(TSubclassOf<UGameplayEffect> Effect,
-                                                              FGameplayEffectContextHandle InEffectContext)
-{
-	if (!Effect.Get())
-		return false;
-
-	FGameplayEffectSpecHandle SpecHandle = AbilitySystemComponent->MakeOutgoingSpec(Effect, 1, InEffectContext);
-	if (SpecHandle.IsValid())
-	{
-		FActiveGameplayEffectHandle ActiveGEHandle =AbilitySystemComponent->ApplyGameplayEffectSpecToSelf(*SpecHandle.Data.Get());
-		
-		return ActiveGEHandle.WasSuccessfullyApplied();
-	}
-
-	return false;
 }

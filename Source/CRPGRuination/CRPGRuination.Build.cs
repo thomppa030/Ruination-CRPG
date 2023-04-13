@@ -19,6 +19,8 @@ public class CRPGRuination : ModuleRules
 			"GameplayTasks",
 			"ModularClassFramework",
 			"EnhancedInput",
+			"HairStrandsCore",
+			"Niagara",
 			"GASFramework",
 			"ModularGameplay", 
 			"GameFeatures"
